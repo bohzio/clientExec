@@ -1,0 +1,82 @@
+[
+ {
+  "directory": "/home/mattia/Desktop/sistemi_operativi_corradi_finale/system-call/clientExec", 
+  "arguments": [
+   "cc", 
+   "-Wall", 
+   "-std=gnu99", 
+   "-DDEBUG", 
+   "-g", 
+   "-I./inc", 
+   "-c", 
+   "src/stampa.c", 
+   "-o", 
+   "src/stampa.o"
+  ], 
+  "file": "src/stampa.c"
+ }, 
+ {
+  "directory": "/home/mattia/Desktop/sistemi_operativi_corradi_finale/system-call/clientExec", 
+  "arguments": [
+   "cc", 
+   "-Wall", 
+   "-std=gnu99", 
+   "-DDEBUG", 
+   "-g", 
+   "-I./inc", 
+   "-c", 
+   "src/invia.c", 
+   "-o", 
+   "src/invia.o"
+  ], 
+  "file": "src/invia.c"
+ }, 
+ {
+  "directory": "/home/mattia/Desktop/sistemi_operativi_corradi_finale/system-call/clientExec", 
+  "arguments": [
+   "cc", 
+   "-Wall", 
+   "-std=gnu99", 
+   "-DDEBUG", 
+   "-g", 
+   "-I./inc", 
+   "-c", 
+   "src/errExit.c", 
+   "-o", 
+   "src/errExit.o"
+  ], 
+  "file": "src/errExit.c"
+ }, 
+ {
+  "directory": "/home/mattia/Desktop/sistemi_operativi_corradi_finale/system-call/clientExec", 
+  "arguments": [
+   "cc", 
+   "-Wall", 
+   "-std=gnu99", 
+   "-DDEBUG", 
+   "-g", 
+   "-I./inc", 
+   "-c", 
+   "src/clientExec.c", 
+   "-o", 
+   "src/clientExec.o"
+  ], 
+  "file": "src/clientExec.c"
+ }, 
+ {
+  "directory": "/home/mattia/Desktop/sistemi_operativi_corradi_finale/system-call/clientExec", 
+  "arguments": [
+   "cc", 
+   "-Wall", 
+   "-std=gnu99", 
+   "-DDEBUG", 
+   "-g", 
+   "-I./inc", 
+   "-c", 
+   "src/salva.c", 
+   "-o", 
+   "src/salva.o"
+  ], 
+  "file": "src/salva.c"
+ }
+]
