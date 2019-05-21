@@ -3,7 +3,7 @@ CFLAGS=-Wall -std=gnu99 -DDEBUG -g
 INCLUDES=-I./inc
 
 # list source code files for clientExc executable
-CLIENT_SRCS= src/errExit.c src/clientExec.c
+CLIENT_SRCS= src/errExit.c src/shared_memory.c src/clientExec.c
 # list source code files for salva executable
 SALVA_SRCS=src/salva.c
 # list source code files for stampa executable
