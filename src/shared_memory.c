@@ -4,9 +4,9 @@
 #include "errExit.h"
 #include "shared_memory.h"
 
-int alloc_shared_memory(size_t size) {
+int alloc_shared_memory(key_t key, size_t size) {
     // get, or create, a shared memory segment
-    int shmid = shmget(123, size, S_IRUSR | S_IWUSR);
+    int shmid = shmget(key, size, S_IRUSR | S_IWUSR);
     if (shmid == -1)
         errExit("shmget failed");
 

@@ -6,7 +6,7 @@
 
 struct SharedItem {
     char idUser[11];
-    char key[20];
+    int key;
     time_t timestamp;
 };
 

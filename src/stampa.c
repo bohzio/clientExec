@@ -3,5 +3,9 @@
 
 int main (int argc, char *argv[]) {
     printf("Hi, I'm Stampa program!\n");
+
+    for(int i=3; i<argc;i++){
+        printf("%s ",argv[i]);
+    }
     return 0;
 }
