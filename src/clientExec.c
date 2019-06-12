@@ -15,7 +15,9 @@
 struct SharedItem *entries;
 char *fileFtokPath = "/tmp/fileFTOK";
 int projid = 123;
-int totalEntries = 10;
+
+#define MAXENTRIES 100
+#define MUTEX 0
 
 
 key_t getKey(){
@@ -23,6 +25,14 @@ key_t getKey(){
 
     return ftok(fileFtokPath,projid);
 }
+
+
+int getFirstDigit(int n){
+    while (n >= 10)
+        n /= 10;
+    return n;
+}
+
 
 
 int main (int argc, char *argv[]) {
@@ -49,45 +59,40 @@ int main (int argc, char *argv[]) {
 
     entries = (struct SharedItem *) get_shared_memory(shmid,0);
 
-    semOp(semid, 0 , -1);
+    semOp(semid, MUTEX , -1);
 
-    for(int i=0; i<totalEntries;i++){
+    for(int i=0; i < MAXENTRIES ;i++){
         if(keyUser == entries[i].key && strcmp(idUser,entries[i].idUser) == 0){
 
-            int idService = entries[i].key - entries[i].timestamp;
+            int idService = getFirstDigit(entries[i].key);
 
             entries[i].idUser[0] = 0;
             entries[i].key = 0;
             entries[i].timestamp = 0;
 
-            semOp(semid, 0 ,1);
+            semOp(semid, MUTEX ,1);
 
-            if(idService == 3){
+            if(idService == 1){
                 printf("stampa\n");
                 execv("stampa",argv);
             }
 
-            else if(idService == 7){
-                printf("invia\n");
-                execv("invia",argv);
-            }
 
-            else if(idService == 11){
+            else if(idService == 2){
                 printf("salva\n");
                 execv("salva",argv);
             }
 
 
-
-            printf("chiave e utente trovati");
+            else if(idService == 3){
+                printf("invia\n");
+                execv("invia",argv);
+            }
         }
     }
 
-    semOp(semid, 0 , 1);
-
-
-
-
+    printf("chiave o utente non validi\n");
+    semOp(semid, MUTEX , 1);
 
     return 0;
 }
