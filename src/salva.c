@@ -7,6 +7,7 @@
 
 int main(int argc, char *argv[]) {
     printf("Hi, I'm Salva program!\n");
+    fflush(stdout);
 
     char *fileName = argv[3];
 
@@ -17,12 +18,10 @@ int main(int argc, char *argv[]) {
 
     printf("opened %s \n", fileName);
 
-
     const int MAX_BUF = 1000;
     char buffer[MAX_BUF];
 
     int length = 0;
-
 
     for(int i=4; i<argc; i++){
         length += snprintf(buffer+length, MAX_BUF-length, "%s", argv[i]);
