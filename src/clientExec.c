@@ -81,13 +81,14 @@ int main(int argc, char *argv[]) {
         execv("stampa", argv);
     } else if (idService == 2) {
         printf("Servizio -> salva\n");
+        execv("salva", argv);
 
     } else if (idService == 3) {
         printf("Servizio -> invia\n");
         execv("invia", argv);
     }
 
-    execv("salva", argv);
+
 
     printf("chiave o utente non validi\n");
 
