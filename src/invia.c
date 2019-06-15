@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     // message contains the following string
 
 
-    char buf[256];
+    char buf[100];
 
     for(int i=4;i<argc;i++){
         strcat(buf, argv[i]);

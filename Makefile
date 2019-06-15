@@ -11,6 +11,8 @@ STAMPA_SRCS=src/errExit.c src/stampa.c
 # list source code files for inva executable
 INVIA_SRCS=src/errExit.c src/invia.c
 
+QUEUE_SRCS =src/errExit.c src/queueChecker.c
+
 ##------------------------------------------------------------------------------
 ## DO NOT TOUCH BELOW THIS LINE!
 ##------------------------------------------------------------------------------
@@ -19,7 +21,9 @@ SALVA_OBJS=$(SALVA_SRCS:.c=.o)
 STAMPA_OBJS=$(STAMPA_SRCS:.c=.o)
 INVIA_OBJS=$(INVIA_SRCS:.c=.o)
 
-all: clientExec salva stampa invia
+QUEUE_OBJS=$(QUEUE_SRCS:.c=.o)
+
+all: clientExec salva stampa invia queueChecker
 
 clientExec: $(CLIENT_OBJS)
 	@echo "Making executable: "$@
@@ -34,6 +38,10 @@ stampa: $(STAMPA_OBJS)
 	@$(CC) $^ -o $@
 
 invia: $(INVIA_OBJS)
+	@echo "Making executable: "$@
+	@$(CC) $^ -o $@
+
+queueChecker: $(QUEUE_OBJS)
 	@echo "Making executable: "$@
 	@$(CC) $^ -o $@
 

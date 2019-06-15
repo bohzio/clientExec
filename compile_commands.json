@@ -57,6 +57,38 @@
    "-g", 
    "-I./inc", 
    "-c", 
+   "src/semaphore.c", 
+   "-o", 
+   "src/semaphore.o"
+  ], 
+  "file": "src/semaphore.c"
+ }, 
+ {
+  "directory": "/home/mattia/Desktop/sistemi_operativi_corradi_finale/system-call/clientExec", 
+  "arguments": [
+   "cc", 
+   "-Wall", 
+   "-std=gnu99", 
+   "-DDEBUG", 
+   "-g", 
+   "-I./inc", 
+   "-c", 
+   "src/queueChecker.c", 
+   "-o", 
+   "src/queueChecker.o"
+  ], 
+  "file": "src/queueChecker.c"
+ }, 
+ {
+  "directory": "/home/mattia/Desktop/sistemi_operativi_corradi_finale/system-call/clientExec", 
+  "arguments": [
+   "cc", 
+   "-Wall", 
+   "-std=gnu99", 
+   "-DDEBUG", 
+   "-g", 
+   "-I./inc", 
+   "-c", 
    "src/shared_memory.c", 
    "-o", 
    "src/shared_memory.o"
