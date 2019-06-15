@@ -59,20 +59,25 @@ int main (int argc, char *argv[]) {
 
     entries = (struct SharedItem *) get_shared_memory(shmid,0);
 
+    int idService = -1;
+
     semOp(semid, MUTEX , -1);
 
     for(int i=0; i < MAXENTRIES ;i++){
         if(keyUser == entries[i].key && strcmp(idUser,entries[i].idUser) == 0){
 
-            int idService = getFirstDigit(entries[i].key);
+            idService = getFirstDigit(entries[i].key);
 
             entries[i].idUser[0] = 0;
             entries[i].key = 0;
             entries[i].timestamp = 0;
 
-            semOp(semid, MUTEX ,1);
+            break;  
+        }
+    }
+     semOp(semid, MUTEX , 1);
 
-            if(idService == 1){
+     if(idService == 1){
                 printf("stampa\n");
                 execv("stampa",argv);
             }
@@ -88,11 +93,10 @@ int main (int argc, char *argv[]) {
                 printf("invia\n");
                 execv("invia",argv);
             }
-        }
-    }
+            
 
     printf("chiave o utente non validi\n");
-    semOp(semid, MUTEX , 1);
+   
 
     return 0;
 }
