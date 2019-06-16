@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
 
     char *fileName = argv[3];
 
-    int fd = open(fileName, O_RDWR | O_CREAT | O_EXCL, S_IRUSR | S_IWUSR);
+    int fd = open(fileName, O_WRONLY | O_CREAT | O_EXCL, S_IRUSR | S_IWUSR);
     if (fd == -1)
         errExit("open");
     // A buffer collecting the string
